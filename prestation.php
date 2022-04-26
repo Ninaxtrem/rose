@@ -15,7 +15,7 @@
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
   <link rel="stylesheet" href="assets/css/style.css">
-    <title>calendrier</title>
+    <title>Préstation</title>
 </head>
 <body>
       <!--Nav-->
@@ -58,7 +58,39 @@
     <h1><img src="assets/img/bg4.jpg" class="img-fluid" alt="Responsive image"></h1>
   </div>
   <!-- fin photo-->
-
+  <h2 class="text-center"> Préstation</h2>
+  <!--prestation-->
+  <div class="card-group">
+  <div class="card">
+    <img class="card-img-top" src="assets/img/9.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="text-center">Pose sur ongles naturels</h5>
+      <p class="text-center">Pose vernis semi permanent couleur unis     35€</p>
+      <p class="text-center">Pose vernis semi permanent + Gainage      45€</p>
+      <p class="text-center">Remplissage de Gel       40€</p>
+      <p class="text-center">Dépose seule       10€</p>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="assets/img/13.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="text-center">Pose Américaine</h5>
+      <p class="text-center">Pose d'extention sur gel + couleur unie       45€</p>
+      <p class="text-center">Dépose + Repose       50€</p>
+      <p class="text-center">Dépose seul       15€</p>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+    <div class="card-body">
+    <h5 class="text-center">Extra</h5>
+    <p class="text-center">Répartion ongle cassé (Gratuit payant au bout du 3ème ongles cassés)       +5€</p>
+    <p class="text-center">Baby boome, nails art, french, dégradé, paillettes, strass, stickers       +5€</p>
+    <p class="text-center">Charms (Par ongles)       +1€</p>
+    </div>
+  </div>
+</div>
+  <!--fin prestation-->
 
 
 
