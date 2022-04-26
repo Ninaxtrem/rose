@@ -12,6 +12,8 @@ $('.multiple-items').slick({
 
   $('.slider').slick({
     infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 3
+    slidesToShow: 4,
+    slidesToScroll: 3,
+    autoplay: true,
+  autoplaySpeed: 5000,
   });
