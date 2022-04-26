@@ -47,6 +47,9 @@
                 <a class="nav-link" href="#">Conseils</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="#">Prise de rendez-vous</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="#">Contact</a>
               </li>
             </ul>
@@ -103,6 +106,16 @@
     <div class="img-div div2"></div>
     <div class="img-div div3"></div>
     <div class="img-div div4"></div>
+    <div class="img-div div5"></div>
+    <div class="img-div div6"></div>
+    <div class="img-div div7"></div>
+    <div class="img-div div8"></div>
+    <div class="img-div div9"></div>
+    <div class="img-div div10"></div>
+    <div class="img-div div11"></div>
+    <div class="img-div div12"></div>
+    <div class="img-div div13"></div>
+    <div class="img-div div14"></div>
   </div>
 
   <div class="photo">
