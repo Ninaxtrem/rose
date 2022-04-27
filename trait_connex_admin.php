@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include "config.php";
+    include "mesFonctionsSQL.php";
 
     if(isset($_POST['admin_mail'])&& !emtpy($_POST['admin_mail']) && isset($_POST['admin_password']) && !empty($_POST['admin_password'])){
 

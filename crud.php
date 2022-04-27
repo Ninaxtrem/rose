@@ -8,7 +8,11 @@
 </head>
 <body>
     <?php 
-        echo "toto";
+        include "mesFonctionsSQL.php";
+        $rdv = getAllRendezVous();
+        var_dump($rdv);
+        
+
     ?>
 
     
