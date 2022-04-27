@@ -2,13 +2,13 @@
     session_start();
     include "config.php";
 
-    if(isset($_POST['email']) && isset($_POST['password'])){
+    if(isset($_POST['email']) && isset($_POST['psword'])){
 
 
         $email = htmlspecialchars($_POST['email']);
-        $password = htmlspecialchars($_POST['password']);
+        $password = htmlspecialchars($_POST['psword']);
 
-        $check = $bdd->prepare('SELECT * FROM admin ');
+        $check = $bdd->prepare('SELECT * FROM admin');
         $check->execute(array($email));
         $data = $check->fetch();
         $row = $check->rowCount();
@@ -17,8 +17,8 @@
         {
             if(filter_var($email, FILTER_VALIDATE_EMAIL))
             {
-                $password = hash('sha256', $password);
-                if($data['password'] === $password)
+                
+                if($data['admin_password'] === $password)
                 {
                     $_SESSION['admin'] = $data['admin_name'];
                     header('Location:crud.php');
