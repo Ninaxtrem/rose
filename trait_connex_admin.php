@@ -2,14 +2,18 @@
     session_start();
     include "config.php";
 
-    if(isset($_POST['email']) && isset($_POST['psword'])){
+    if(isset($_POST['admin_mail'])&& !emtpy($_POST['admin_mail']) && isset($_POST['admin_password']) && !empty($_POST['admin_password'])){
 
+        
 
-        $email = htmlspecialchars($_POST['email']);
-        $password = htmlspecialchars($_POST['psword']);
+        $email = htmlspecialchars($_POST['admin_mail']);
+        $password = htmlspecialchars($_POST['admin_password']);
 
-        $check = $bdd->prepare('SELECT * FROM admin');
-        $check->execute(array($email));
+        $check = $bdd->prepare('SELECT * FROM admin WHERE admin_mail = :admin_mail AND admin_password = :admin_password');
+        $check->execute(array(
+            ":admin_mail" => $email,
+            ":admin_password" => $password
+        ));
         $data = $check->fetch();
         $row = $check->rowCount();
 

@@ -9,8 +9,8 @@
 <body>
     <section class="sectForm">
         <form action="trait_connex_admin.php" method="post">
-            <input type="email" autocomplete="off" name="email" placeholder = "Entrez votre mail" required>
-            <input type="password" name="psword" placeholder = "Entrez votre mot de passe" required>
+            <input type="email" autocomplete="off" name="admin_mail" placeholder = "Entrez votre mail" required>
+            <input type="password" name="admin_password" placeholder = "Entrez votre mot de passe" required>
             <button type="submit">Entrer</button>
         </form>
     </section>

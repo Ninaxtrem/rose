@@ -7,7 +7,10 @@
     <title></title>
 </head>
 <body>
-    <h1>Coucou lalou</h1>
+    <?php 
+        echo "toto";
+    ?>
+
     
 </body>
 </html>
