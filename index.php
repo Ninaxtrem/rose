@@ -44,7 +44,7 @@
               </li>
               <!-- Link panel admin -->
               <li class="nav-item">
-                <a class="nav-link" href="connex_admin.php">X</i></a>
+                <a class="nav-link" href="connex_admin.php">Panel admin</i></a>
               </li>
             </ul>
           </div>
