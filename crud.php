@@ -9,8 +9,11 @@
 <body>
     <?php 
         include "mesFonctionsSQL.php";
-        $rdv = getAllRendezVous();
-        var_dump($rdv);
+        include "mesFonctionsTable.php";
+        
+        $rows = getAllRendezVous();
+        afficherTableau();
+        
         
 
     ?>

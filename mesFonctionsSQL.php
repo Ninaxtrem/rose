@@ -1,5 +1,5 @@
 <?php 
-    
+    include "config.php";
 
     function getDatabaseConnexion() 
     {
@@ -40,7 +40,7 @@
     function readUser($id)
     {
         $con = getDatabaseConnexion();
-        $requete = "SELECT * FROM client WHERE id = '$id";
+        $requete = "SELECT * FROM client WHERE id = $id";
         $stmt = $con->query($requete);
         $row = $stmt->fetchAll();
         if(!empty($row)) {
@@ -134,4 +134,5 @@
             echo $sql . "<br>" . $e->getMessage();
         }
     }
+    
 ?>
