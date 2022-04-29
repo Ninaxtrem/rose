@@ -5,3 +5,13 @@ body {
     color: #333;
     background-color: #fff;
   }
+.butUpdate{
+  border-radius: 10px;
+  background-color: blue;
+  color: white;
+}
+.butDelete{
+  border-radius: 10px;
+  background-color: red;
+  color: white;
+}

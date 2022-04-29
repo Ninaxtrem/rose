@@ -4,13 +4,15 @@ require 'assets/class/config.php';
 require 'assets/class/select.php';
 
 
+
+
 ?>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rose - Panel admin</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4-4.1.1/jq-3.3.1/dt-1.10.18/sl-1.2.6/datatables.min.css"/>
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4-4.1.1/jq-3.3.1/dt-1.10.18/sl-1.2.6/datatables.min.js"></script>
@@ -44,8 +46,10 @@ require 'assets/class/select.php';
           <td><?= $row['prenom'] ?></td>
           <td><?= $row['tel'] ?></td>
           <td><?= $row['mail'] ?></td>
-          <td><a href="#">Update</a></td>
-          <td><a href="#">Delete</a></td>
+
+          
+          <td><button class="butUpdate" onclick="updateUser()">Update</button></td>
+          <td><button class="butDelete" onclick="document.location.href='mesFonctionsSQL.php?id=<?php echo $row['id'] ?>' " ?>Delete</button></td>
           <?php
             }
             ?>

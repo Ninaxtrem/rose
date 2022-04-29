@@ -1,5 +1,4 @@
 <?php 
-    include "config.php";
 
     function getDatabaseConnexion() 
     {
@@ -66,17 +65,21 @@
             echo $sql . "<br>" . $e->getMessage();
         }
     }
-    function deleteUser($id)
+    function deleteUser(int $id)
     {   
         try
         {
             $con = getDatabaseConnexion();
-            $requete = "DELETE client WHERE id = '$id'";
-            $stmt = $con->query($requete);
+            $requete = "DELETE FROM client WHERE id = ?";
+            $stmt = $con->prepare($requete);
+            $stmt->execute(array(
+                $id
+            ));
+            header('Location:crud.php');
         }
         catch(PDOException $e)
         {
-            echo $sql . "<br>" . $e->getMessage();
+            echo $e->getMessage();
         }
     }
     // RDV
@@ -110,10 +113,10 @@
         {
             $con = getDatabaseConnexion();
             $requete = "UPDATE rdv SET
-                    debut = '$debut',
-                    fin = '$fin',
-                    statut = '$statut'
-                    WHERE id = '$id' ";
+                    debut = $debut,
+                    fin = $fin,
+                    statut = $statut,
+                    WHERE id = $id ";
             $stmt = $con->query($requete);
         }
         catch(PDOException $e)
@@ -126,7 +129,7 @@
         try
         {
             $con = getDatabaseConnexion();
-            $requete = "DELETE rdv WHERE id = '$id'";
+            $requete = "DELETE rdv WHERE id = $id";
             $stmt = $con->query($requete);
         }
         catch(PDOException $e)
@@ -134,5 +137,10 @@
             echo $sql . "<br>" . $e->getMessage();
         }
     }
+    
+    if(isset($_GET['id']) && !empty($_GET['id'])){
+        deleteUser($_GET['id']);
+    }
+    
     
 ?>
