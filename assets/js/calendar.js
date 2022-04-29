@@ -1,9 +1,12 @@
-const StopEventPropagation = (e)=> {
+let mockData;
+
+const StopEventPropagation = (e) => {
     if (!e) return;
     e.cancelBubble = true;
     if (e.stopPropagation) e.stopPropagation();
 };
-export const Calendar = (id) => ({ 
+
+const Calendar = (id) => ({
     id: id,
     data: [],
     el: undefined,
@@ -12,33 +15,36 @@ export const Calendar = (id) => ({
     onDateClick(e) {
         StopEventPropagation(e);
         const el = e.srcElement;
-        console.log('click'); 
+        console.log('click');
         console.log(el);
     },
     onEventClick(e) {
         StopEventPropagation(e);
         const el = e.srcElement;
-        console.log('click'); 
-        console.log(el); 
+        console.log('click');
+        console.log(el);
     },
     bindData(events) {
-        this.data = events.sort((a,b) => {
-            if ( a.time < b.time ) return -1;
-            if ( a.time > b.time ) return 1;
+        this.data = events.sort((a, b) => {
+            if (a.time < b.time) return -1;
+            if (a.time > b.time) return 1;
             return 0;
         });
     },
-    renderEvents() {    
-        if (!this.data || this.data.length<=0) return;
+    renderEvents() {
+        if (!this.data || this.data.length <= 0) return;
         const lis = this.el.querySelectorAll(`.${this.id} .days .inside`);
+        console.log(lis.length)
         let y = this.el.querySelector('.month-year .year').innerText;
         let m = lis[0].querySelector('.date').getAttribute('month');
-        lis.forEach((li)=>{
+        lis.forEach((li) => {
             let d = li.innerText;
             let divEvents = li.querySelector('.events');
             li.onclick = this.onDateClick;
-            this.data.forEach((ev)=>{
+            this.data.forEach((ev) => {
+                console.log(this.data.length)
                 let evTime = moment(ev.time);
+                console.log(evTime)
                 if (evTime.year() == y && evTime.month() == m && evTime.date() == d) {
                     let frgEvent = document.createRange().createContextualFragment(`
                         <div time="${ev.time}" class="event ${ev.cls}">${evTime.format('h:mma')} ${ev.desc}</div>
@@ -61,19 +67,19 @@ export const Calendar = (id) => ({
         if (isNaN(y) && isNaN(this.y)) {
             this.y = moment().year();
         } else if ((!isNaN(y) && isNaN(this.y)) || (!isNaN(y) && !isNaN(this.y))) {
-            this.y = y>1600 ? y : moment().year(); //calendar doesn't exist before 1600! :)
+            this.y = y > 1600 ? y : moment().year(); //calendar doesn't exist before 1600! :)
         }
         if (isNaN(m) && isNaN(this.m)) {
             this.m = moment().month();
         } else if ((!isNaN(m) && isNaN(this.m)) || (!isNaN(m) && !isNaN(this.m))) {
-            this.m = m>=0 ? m : moment().month(); //momentjs month starts from 0-11
+            this.m = m >= 0 ? m : moment().month(); //momentjs month starts from 0-11
         }
         //------------------------------------------------------------------------------------------
 
         const d = moment().year(this.y).month(this.m).date(1); //first date of month
         const now = moment();
-        const frgCal = document.createRange().createContextualFragment(`
-        <div class="calendar noselect p-5">
+        const frgCal = document.createRange().createContextualFragment(
+            `<div class="calendar noselect p-5">
             <div class="month-year-btn d-flex justify-content-center align-items-center mb-2">
                 <a class="prev-month"><i class="fas fa-caret-left fa-lg m-3"></i></a>
                 <div class="month-year d-flex justify-content-center align-items-center">
@@ -91,12 +97,12 @@ export const Calendar = (id) => ({
                 <li><h6 class="initials">Fri</h6></li>
                 <li><h6 class="initials">Sat</h6></li>
             </ol>
-        </div>
-        `);
+        </div>`
+        );
         const isSameDate = (d1, d2) => d1.format('YYYY-MM-DD') == d2.format('YYYY-MM-DD');
         let frgWeek;
         d.day(-1); //move date to the oldest Sunday, so that it lines up with the calendar layout
-        for(let i=0; i<5; i++){ //loop thru 35 boxes on the calendar month
+        for (let i = 0; i < 5; i++) { //loop thru 35 boxes on the calendar month
             frgWeek = document.createRange().createContextualFragment(`
             <ol class="days list-unstyled" week="${d.week()}">
                 <li class="${d.add(1,'d'),this.m != d.month()?' outside':'inside'}${isSameDate(d,now)?' today':''}"><div month="${d.month()}" class="date">${d.format('D')}</div><div class="events"></div></li>
@@ -110,12 +116,12 @@ export const Calendar = (id) => ({
             `);
             frgCal.querySelector('.calendar').appendChild(frgWeek);
         }
-        
-        frgCal.querySelector('.prev-month').onclick = ()=>{
+
+        frgCal.querySelector('.prev-month').onclick = () => {
             const dp = moment().year(this.y).month(this.m).date(1).subtract(1, 'month');
             this.render(dp.year(), dp.month());
         };
-        frgCal.querySelector('.next-month').onclick = ()=>{
+        frgCal.querySelector('.next-month').onclick = () => {
             const dn = moment().year(this.y).month(this.m).date(1).add(1, 'month');
             this.render(dn.year(), dn.month());
         };
@@ -124,4 +130,40 @@ export const Calendar = (id) => ({
         this.el.appendChild(frgCal);
         this.renderEvents();
     }
+});
+
+const Spinner = (id) => ({
+    id: id,
+    el: null,
+    renderSpinner() {
+        const frgSpinner = document.createRange().createContextualFragment(`
+        <div class="spinner d-flex justify-content-center align-items-center">
+            <div class="spinner-grow text-light" style="width: 4rem; height: 4rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        `);
+        this.el = document.getElementById(this.id);
+        this.el.innerHTML = ''; //replacing
+        this.el.appendChild(frgSpinner);
+        return this;
+    },
+    async delay(delay = 2000) {
+        await new Promise(resolve => setTimeout(resolve, delay));
+    }
+});
+
+document.addEventListener("DOMContentLoaded", async () => {
+
+    $.get("./assets/js/mockData.json", function (data, status) {
+        mockData = data
+
+        const cal = Calendar('calendar');
+        const spr = Spinner('calendar');
+
+        // await spr.renderSpinner().delay(0);
+        cal.bindData(mockData);
+        cal.render();
+    });
+
 });

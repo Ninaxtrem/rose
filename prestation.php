@@ -19,11 +19,13 @@
 </head>
 <body>
       <!--Nav-->
-  <div class="sticky-top">
+      <div class="sticky-top">
     <nav class="navbar navbar-dark bg-dark">
       <div class="container justify-content-between">
         <div class="d-none d-lg-block">
-          <img src="assets/img/preview-removebg-preview.png" alt="" width="90" height="70">
+        <a href="http://localhost/rose">
+          <img src="assets/img/rose_blanc_logo.png" alt="" width="90" height="70">
+          </a>
         </div>
         <div class="navbar navbar-expand-lg">
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content"
@@ -33,19 +35,16 @@
           <div class="collapse navbar-collapse" id="navbar-content">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="#">Accueil</a>
+                <a class="nav-link" href="http://localhost/rose">Accueil</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="http://localhost/rose/Pr%C3%A9station">Préstation</a>
+                <a class="nav-link" href="http://localhost/rose/prestation">Préstation</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Conseils</a>
+                <a class="nav-link" href="http://localhost/rose/conseil">Conseils</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Prise de rendez-vous</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link" href="http://localhost/rose/contact">Prise de rendez vous </a>
               </li>
             </ul>
           </div>
@@ -55,14 +54,16 @@
   <!-- fin nav-->
  <!--Photo-->
  <div class="ongles">
-    <h1><img src="assets/img/bg4.jpg" class="img-fluid" alt="Responsive image"></h1>
+    <h1><img src="assets/img/present bg.jpg" class="img-fluid" alt="Responsive image"></h1>
   </div>
   <!-- fin photo-->
+  <div class="presta">
   <h2 class="text-center"> Préstation</h2>
+  </div>
   <!--prestation-->
   <div class="card-group">
   <div class="card">
-    <img class="card-img-top" src="assets/img/9.jpg" alt="Card image cap">
+    <img class="img-fluid" src="assets/img/presta1.jpg" alt="Card image cap">
     <div class="card-body">
       <h5 class="text-center">Pose sur ongles naturels</h5>
       <p class="text-center">Pose vernis semi permanent couleur unis     35€</p>
@@ -72,7 +73,7 @@
     </div>
   </div>
   <div class="card">
-    <img class="card-img-top" src="assets/img/13.jpg" alt="Card image cap">
+    <img class="card-img-top" src="assets/img/presta2.jpg" alt="Card image cap">
     <div class="card-body">
       <h5 class="text-center">Pose Américaine</h5>
       <p class="text-center">Pose d'extention sur gel + couleur unie       45€</p>
@@ -81,7 +82,7 @@
     </div>
   </div>
   <div class="card">
-    <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+    <img class="card-img-top" src="assets/img/presta3.jpg" alt="Card image cap">
     <div class="card-body">
     <h5 class="text-center">Extra</h5>
     <p class="text-center">Répartion ongle cassé (Gratuit payant au bout du 3ème ongles cassés)       +5€</p>
@@ -96,40 +97,39 @@
 
 
 
- <!-- foother-->
- <footer class="bg-dark text-center text-white">
+  <!-- foother-->
+  <footer class="bg-dark text-center text-white">
     <div class="container p-2">
       <section class="mb-4">
-        <div class="container">
+        <div class="foot">
           <div class="row">
             <div class="col-sm">
-              <a class="btn btn-outline-light btn-floating m-1" href="https://www.peggysage.com/fr-FR/"
+              <a class="btn btn-light btn-floating m-1" href="https://www.peggysage.com/fr-FR/"
                 role="button"><img class="img-fluid" alt="Responsive image" src="assets/img/lg1.png"
                   style=width:50%></a>
             </div>
             <div class="col-sm">
-              <a class="btn btn-outline-light btn-floating m-1" href="https://nailkitformations.fr/" role="button"><img
+              <a class="btn btn-light btn-floating m-1" href="https://nailkitformations.fr/" role="button"><img
                   class="img-responsive" src="assets/img/logo_nkl-e1576767218908.png" style=width:50%></a>
             </div>
             <div class="col-sm">
-              <a class="btn btn-outline-light btn-floating m-1" href="https://passioneongles.fr/" role="button"><img
+              <a class="btn btn-light btn-floating m-1" href="https://passioneongles.fr/" role="button"><img
                   class="img-fluid" alt="Responsive image" src="assets/img/logo2.png" style=width:50%></a>
             </div>
           </div>
         </div>
 
         <h2 class="text-center"> Prise de rendez vous</h2>
-        <section class="">
-          <li>
-            <a href="https://www.facebook.com/RoseEternails" class="text-white"><i
-                class="fa-brands fa-facebook"></i></a>
-          </li>
-          <li>
-            <a href="https://api.whatsapp.com/send?phone=33634240457&app=facebook&entry_point=page_cta&fbclid=IwAR3XEy4tffTwDwE7AQD6TSYrn5Dyy2B0QXSlIbuMtgO-knqcNUckE9x4ps0"
-              class="text-white"><i class="fa-brands fa-whatsapp"></i></a>
-          </li>
-        </section>
 
+        <div class="d-flex justify-content-center">
+        <div class="d-flex flex-row bd-highlight mb-3">
+        
+  <div class="p-2 bd-highlight"> <a href="https://www.facebook.com/RoseEternails" class="text-white"><h2><i
+                class="fa-brands fa-facebook"></i></h2></a></div>
+  <div class="p-2 bd-highlight"><a href="https://api.whatsapp.com/send?phone=33634240457&app=facebook&entry_point=page_cta&fbclid=IwAR3XEy4tffTwDwE7AQD6TSYrn5Dyy2B0QXSlIbuMtgO-knqcNUckE9x4ps0"
+              class="text-white"><h2><i class="fa-brands fa-whatsapp"></i></h2></a></div>
+        </div>
+        </div>
     </div>
 
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">

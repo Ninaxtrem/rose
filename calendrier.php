@@ -3,11 +3,13 @@
 
 <head>
   <title>Dynamic Event Calendar For Bootstrap 4 Example</title>
-  <!-- Required meta tags -->
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
-  <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="/path/to/cdn/bootstrap.min.css" />
+
+
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="css/calendar.css">
@@ -22,7 +24,7 @@
 <li><a href="https://www.jqueryscript.net/time-clock/dynamic-event-calendar-bootstrap.html">Download This Plugin</a></li>
 <li><a href="https://www.jqueryscript.net/">Back To jQueryScript.Net</a></li>
 </ul><div id="carbon-block"></div>
-<div class="jquery-script-ads"><script type="text/javascript"><!--
+<div class="jquery-script-ads"><script type="text/javascript">
 google_ad_client = "ca-pub-2783044520727903";
 /* jQuery_demo */
 google_ad_slot = "2780937993";
@@ -49,9 +51,14 @@ src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
 
 
   </div>
+  <div id="calendar"></div>
+
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="/path/to/cdn/jquery.slim.min.js"></script>
+<script src="/path/to/cdn/bootstrap.min.js"></script>
+<script src="/path/to/cdn/moment.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
@@ -77,20 +84,6 @@ src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 
-</script>
-<script>
-try {
-  fetch(new Request("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js", { method: 'HEAD', mode: 'no-cors' })).then(function(response) {
-    return true;
-  }).catch(function(e) {
-    var carbonScript = document.createElement("script");
-    carbonScript.src = "//cdn.carbonads.com/carbon.js?serve=CK7DKKQU&placement=wwwjqueryscriptnet";
-    carbonScript.id = "_carbonads_js";
-    document.getElementById("carbon-block").appendChild(carbonScript);
-  });
-} catch (error) {
-  console.log(error);
-}
 </script>
 </body>
 

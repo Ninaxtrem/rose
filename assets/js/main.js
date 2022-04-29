@@ -1,7 +1,8 @@
-import {mockData} from './mockData.js';
-import {Spinner} from './spinner.js';
-import {Calendar} from './calendar.js';
+// import {mockData} from './mockData.js';
+// import {Spinner} from './spinner.js';
+// import {Calendar} from './calendar.js';
 
+console.log(Calendar)
 
 document.addEventListener("DOMContentLoaded", async ()=>{
     const cal = Calendar('calendar');
